@@ -29,3 +29,6 @@
 - 북마크, 종목별 댓글 토론
 - 화이트/다크모드
 - chatgpt를 활용한 종목 추천
+
+## 화면 설계서3
+[stock-saga 프로토 타입](https://ovenapp.io/project/s3rW1UYmvzipGY50PqZT1tqdwQ6oWP6J#v0Ww2)
