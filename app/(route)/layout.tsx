@@ -1,4 +1,4 @@
-import "@/app/globals.css";
+import "@/app/css/globals.css";
 
 import type { Metadata } from "next";
 import Providers from "@/app/ReactQueryProvider";
