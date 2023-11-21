@@ -1,27 +1,29 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons/faMoon";
 import { faSun } from "@fortawesome/free-solid-svg-icons/faSun";
+import { useEffect } from "react";
+import useLocalStorage from "@/app/hooks/useLocalStorage";
 
 export default function ThemeSwitcher() {
-  const [isDark, setIsDark] = useState(false);
+  const THEME_NAME = "stock-saga-theme";
+  const THEME_DARK = "dark";
+  const [isDark, setIsDark] = useLocalStorage(THEME_NAME, true);
 
-  const onChangeTheme = () => setIsDark((prev) => !prev);
+  const onChangeTheme = (isDarkMode: boolean) => setIsDark(!isDarkMode);
 
   useEffect(() => {
     if (isDark) {
-      document.documentElement.classList.add("dark");
+      document.documentElement.classList.add(THEME_DARK);
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove(THEME_DARK);
     }
   }, [isDark]);
 
   return (
     <FontAwesomeIcon
-      onClick={onChangeTheme}
+      onClick={() => onChangeTheme(isDark)}
       icon={isDark ? faMoon : faSun}
       style={{ color: isDark ? "white" : "black" }}
     />
