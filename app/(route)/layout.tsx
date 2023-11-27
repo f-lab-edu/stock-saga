@@ -2,6 +2,7 @@ import "@/app/css/globals.css";
 
 import type { Metadata } from "next";
 import Providers from "@/app/ReactQueryProvider";
+import ThemeSwitcher from "@/app/components/ThemeSwitcher";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +16,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-white dark:bg-black">
+        <ThemeSwitcher />
         <Providers>{children}</Providers>
       </body>
     </html>
