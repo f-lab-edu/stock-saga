@@ -16,9 +16,9 @@ export default function ThemeSwitcher() {
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add(THEME_DARK);
-    } else {
-      document.documentElement.classList.remove(THEME_DARK);
+      return;
     }
+    document.documentElement.classList.remove(THEME_DARK);
   }, [isDark]);
 
   return (
