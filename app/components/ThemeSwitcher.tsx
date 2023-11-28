@@ -14,11 +14,7 @@ export default function ThemeSwitcher() {
   const onChangeTheme = (isDarkMode: boolean) => setIsDark(!isDarkMode);
 
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add(THEME_DARK);
-      return;
-    }
-    document.documentElement.classList.remove(THEME_DARK);
+    document.documentElement.classList.toggle(THEME_DARK, isDark);
   }, [isDark]);
 
   return (
