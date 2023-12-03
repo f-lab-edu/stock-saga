@@ -1,5 +1,5 @@
 function Equities() {
-  return <div>Equities page</div>;
+  return <div>Equities page</div>
 }
 
-export default Equities;
+export default Equities
