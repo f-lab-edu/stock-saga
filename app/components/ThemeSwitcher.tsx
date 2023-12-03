@@ -20,7 +20,8 @@ export default function ThemeSwitcher() {
   return (
     <FontAwesomeIcon
       onClick={() => onChangeTheme(isDark)}
-      icon={isDark ? faMoon : faSun}
+      icon={isDark ? faSun : faMoon}
+      size="lg"
       style={{ color: isDark ? 'white' : 'black' }}
     />
   )
