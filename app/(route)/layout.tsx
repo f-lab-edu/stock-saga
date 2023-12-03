@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white dark:bg-black">
+      <body className="bg-white p-2 pt-2 dark:bg-black">
         <ThemeSwitcher />
         <Providers>{children}</Providers>
       </body>
