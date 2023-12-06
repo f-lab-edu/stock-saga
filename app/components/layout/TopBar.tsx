@@ -2,15 +2,24 @@ import ThemeSwitcher from '@/app/components/ThemeSwitcher'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
+import Image from 'next/image'
+import darkLogo from '@/app/image/full_logo_dark.png'
 
 export default function TopBar() {
   return (
     <div className="w-full bg-neutral-950 px-5 py-3 text-white xl:flex xl:justify-center">
       <div className="flex max-w-7xl justify-between xl:w-full">
-        <div>
-          <FontAwesomeIcon icon={faBars} size="lg" />
+        <div className="flex items-center">
+          <FontAwesomeIcon
+            icon={faBars}
+            size="lg"
+            style={{
+              marginRight: '10px',
+            }}
+          />
+          <Image src={darkLogo} width={130} height={50} alt="Picture of Logo" />
         </div>
-        <div>
+        <div className="flex items-center">
           <ThemeSwitcher />
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
