@@ -6,11 +6,11 @@ export default function NavigationBar() {
   const navList = ['지수', '주식', '외환', '암호화폐']
 
   return (
-    <div className="h-12 w-full bg-neutral-500 px-5 xl:flex xl:justify-center">
+    <div className="h-12 w-full bg-neutral-500 px-5  dark:bg-turquoise-700 xl:flex xl:justify-center">
       <div className="flex h-full max-w-7xl xl:w-full">
         <button
           type="button"
-          className="bordser-b-4 mr-3 h-full border-transparent"
+          className="mr-3 h-full border-b-4 border-transparent"
         >
           시장
           <FontAwesomeIcon

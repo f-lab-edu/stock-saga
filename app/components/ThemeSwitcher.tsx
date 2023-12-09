@@ -22,7 +22,6 @@ export default function ThemeSwitcher() {
       onClick={() => onChangeTheme(isDark)}
       icon={isDark ? faSun : faMoon}
       size="lg"
-      style={{ color: isDark ? 'white' : 'black' }}
     />
   )
 }
