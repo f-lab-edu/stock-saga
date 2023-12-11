@@ -61,10 +61,6 @@ export default function NavigationBar() {
         },
       ],
     },
-    {
-      name: '관심 목록',
-      path: '/favorites',
-    },
   ]
   const currentPath = usePathname()
   const includesPath = (currentUrl: string, firstPath: string) =>
