@@ -101,10 +101,14 @@ export default function NavigationBar() {
           />
         </button>
         {open && (
-          <div className="absolute top-14 border">
-            <ul>
+          <div className="absolute top-14 rounded bg-neutral-500  dark:bg-turquoise-700">
+            <ul className="p-2">
               {navList.map((navItem) => (
-                <NavItem key={navItem.path} hasBorder={false}>
+                <NavItem
+                  key={navItem.path}
+                  hasBorder={false}
+                  className="rounded	 px-3 py-2 hover:bg-neutral-400 dark:hover:bg-turquoise-600"
+                >
                   <button
                     type="button"
                     onClick={() => selectMainNav(navItem.path)}

@@ -7,6 +7,7 @@ module.exports = {
         'turquoise-900': '#0c1115',
         'turquoise-800': '#191e22',
         'turquoise-700': '#262b31',
+        'turquoise-600': '#303840',
       },
     },
   },
