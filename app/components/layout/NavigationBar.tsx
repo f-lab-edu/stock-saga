@@ -79,7 +79,10 @@ export default function NavigationBar() {
   })
   const [open, setOpen] = useState(false)
 
-  // console.log(getSelectedNav(selectedNavPath))
+  const selectMainNav = (navPath: string) => {
+    setSelectedNavPath(navPath)
+    setOpen(false)
+  }
 
   return (
     <div className="h-12 w-full bg-neutral-500 px-5  dark:bg-turquoise-700 xl:flex xl:justify-center">
@@ -104,7 +107,7 @@ export default function NavigationBar() {
                 <NavItem key={navItem.path} hasBorder={false}>
                   <button
                     type="button"
-                    onClick={() => setSelectedNavPath(navItem.path)}
+                    onClick={() => selectMainNav(navItem.path)}
                   >
                     {navItem.name}
                   </button>
@@ -129,6 +132,7 @@ export default function NavigationBar() {
                 <Link
                   href={`${selectedNavPath}${subNavItem.path}`}
                   className="align-middle"
+                  onClick={() => setOpen(false)}
                 >
                   {subNavItem.name}
                 </Link>
