@@ -79,6 +79,8 @@ export default function NavigationBar() {
   })
   const [open, setOpen] = useState(false)
 
+  // console.log(getSelectedNav(selectedNavPath))
+
   return (
     <div className="h-12 w-full bg-neutral-500 px-5  dark:bg-turquoise-700 xl:flex xl:justify-center">
       <div className="relative flex h-full max-w-7xl xl:w-full">
@@ -114,9 +116,9 @@ export default function NavigationBar() {
 
         <nav className="h-full">
           <ul className="flex h-full">
-            {getSelectedNav(selectedNavPath)?.subNav?.map((subNavItem) => (
+            {getSelectedNav(selectedNavPath)?.subNav?.map((subNavItem, idx) => (
               <NavItem
-                key={`${selectedNavPath}${subNavItem.path}`}
+                key={`${idx.toLocaleString()}`}
                 hasBorder
                 isCurrentPath={includesPath(
                   currentPath,
