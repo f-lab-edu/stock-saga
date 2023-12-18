@@ -1,9 +1,12 @@
+'use client'
+
 import ThemeSwitcher from '@/app/components/ThemeSwitcher'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
 import Image from 'next/image'
 import lightLogo from '@/app/image/full_logo_light.png'
+import Link from 'next/link'
 
 export default function TopBar() {
   return (
@@ -17,12 +20,14 @@ export default function TopBar() {
               marginRight: '10px',
             }}
           />
-          <Image
-            src={lightLogo}
-            width={130}
-            height={50}
-            alt="Picture of Logo"
-          />
+          <Link href="/">
+            <Image
+              src={lightLogo}
+              width={130}
+              height={50}
+              alt="Picture of Logo"
+            />
+          </Link>
         </div>
         <div className="flex items-center">
           <ThemeSwitcher />
