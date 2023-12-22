@@ -5,6 +5,7 @@
     "airbnb-typescript",
     "prettier"
   ],
+  "plugins": ["simple-import-sort"],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
@@ -13,6 +14,20 @@
     "no-console": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "warn",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          ["^(next|react)", "^@?\\w"],
+          ["^(@|components)(/.*|$)"],
+          ["^\\u0000"],
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          ["^.+\\.?(css)$"]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error"
   }
 }

@@ -1,10 +1,11 @@
 'use client'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import NavItem from '@/app/components/NavItem'
 
 export default function NavigationBar() {

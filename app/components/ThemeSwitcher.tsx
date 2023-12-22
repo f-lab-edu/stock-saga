@@ -1,9 +1,10 @@
 'use client'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useEffect } from 'react'
 import { faMoon } from '@fortawesome/free-solid-svg-icons/faMoon'
 import { faSun } from '@fortawesome/free-solid-svg-icons/faSun'
-import { useEffect } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import useLocalStorage from '@/app/hooks/useLocalStorage'
 
 export default function ThemeSwitcher() {

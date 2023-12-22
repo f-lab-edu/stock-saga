@@ -1,12 +1,13 @@
 'use client'
 
-import ThemeSwitcher from '@/app/components/ThemeSwitcher'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Image from 'next/image'
+import Link from 'next/link'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
-import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import ThemeSwitcher from '@/app/components/ThemeSwitcher'
 import lightLogo from '@/app/image/full_logo_light.png'
-import Link from 'next/link'
 
 export default function TopBar() {
   return (
