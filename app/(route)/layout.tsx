@@ -1,8 +1,9 @@
-import '@/app/css/globals.css'
-
 import type { Metadata } from 'next'
-import Providers from '@/app/ReactQueryProvider'
+
 import ThemeSwitcher from '@/app/components/ThemeSwitcher'
+import Providers from '@/app/ReactQueryProvider'
+
+import '@/app/css/globals.css'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
