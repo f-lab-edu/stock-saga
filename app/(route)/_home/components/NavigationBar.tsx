@@ -7,72 +7,19 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import NavItem from '@/app/(route)/_home/components/NavItem'
+import ROUTES from '@/app/(route)/_home/constants/routes'
 
 export default function NavigationBar() {
-  const navList = [
-    {
-      name: '시장',
-      path: '/markets',
-      subNav: [
-        {
-          name: '지수',
-          path: '/equities',
-        },
-        {
-          name: '주식',
-          path: '/stocks',
-        },
-        {
-          name: '외환',
-          path: '/currecies',
-        },
-        {
-          name: '암호화폐',
-          path: '/crypto',
-        },
-      ],
-    },
-    {
-      name: '뉴스',
-      path: '/news',
-      subNav: [
-        {
-          name: '경제',
-          path: '/economy',
-        },
-        {
-          name: '주식 시장',
-          path: '/stock-markets',
-        },
-        {
-          name: '상품과 선물',
-          path: '/commodities',
-        },
-        {
-          name: '외환',
-          path: '/currecies',
-        },
-        {
-          name: '암호화폐',
-          path: '/crypto',
-        },
-        {
-          name: '일반',
-          path: '/general',
-        },
-      ],
-    },
-  ]
   const currentPath = usePathname()
   const includesPath = (currentUrl: string, firstPath: string) =>
     currentUrl.startsWith(firstPath)
 
   const getSelectedNav = (currentUrl: string) =>
-    navList.find((navItem) => includesPath(currentUrl, navItem.path))
+    ROUTES.find((navItem) => includesPath(currentUrl, navItem.path))
 
   const [selectedNavPath, setSelectedNavPath] = useState<string>(() => {
     const selectedNavItem = getSelectedNav(currentPath)
-    return selectedNavItem ? selectedNavItem.path : navList[0].path
+    return selectedNavItem ? selectedNavItem.path : ROUTES[0].path
   })
   const [open, setOpen] = useState(false)
 
@@ -100,7 +47,7 @@ export default function NavigationBar() {
         {open && (
           <div className="absolute top-14 rounded bg-neutral-500  dark:bg-turquoise-700">
             <ul className="p-2">
-              {navList.map((navItem) => (
+              {ROUTES.map((navItem) => (
                 <NavItem
                   key={navItem.path}
                   hasBorder={false}
