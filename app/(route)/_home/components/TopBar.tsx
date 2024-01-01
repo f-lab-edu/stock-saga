@@ -6,7 +6,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import ThemeSwitcher from '@/app/components/ThemeSwitcher'
+import ThemeSwitcher from '@/app/(route)/_home/components/ThemeSwitcher'
 import lightLogo from '@/app/image/full_logo_light.png'
 
 export default function TopBar() {

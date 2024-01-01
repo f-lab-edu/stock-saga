@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
-import Header from '@/app/components/layout/Header'
-import Providers from '@/app/ReactQueryProvider'
+import Header from '@/app/(route)/_home/components/Header'
+import Providers from '@/app/provider/ReactQueryProvider'
 
 import '@/app/css/globals.css'
 

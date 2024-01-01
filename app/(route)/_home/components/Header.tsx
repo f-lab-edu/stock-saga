@@ -1,5 +1,5 @@
-import NavigationBar from '@/app/components/layout/NavigationBar'
-import TopBar from '@/app/components/layout/TopBar'
+import NavigationBar from '@/app/(route)/_home/components/NavigationBar'
+import TopBar from '@/app/(route)/_home/components/TopBar'
 
 export default function Header() {
   return (
