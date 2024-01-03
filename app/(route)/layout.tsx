@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
-import ThemeSwitcher from '@/app/components/ThemeSwitcher'
-import Providers from '@/app/ReactQueryProvider'
+import Header from '@/app/(route)/_home/components/Header'
+import Providers from '@/app/provider/ReactQueryProvider'
 
 import '@/app/css/globals.css'
 
@@ -17,8 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white p-2 pt-2 dark:bg-black">
-        <ThemeSwitcher />
+      <body className="bg-white dark:bg-turquoise-900 dark:text-white">
+        <Header />
         <Providers>{children}</Providers>
       </body>
     </html>

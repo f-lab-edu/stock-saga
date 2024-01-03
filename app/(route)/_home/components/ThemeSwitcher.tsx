@@ -5,7 +5,7 @@ import { faMoon } from '@fortawesome/free-solid-svg-icons/faMoon'
 import { faSun } from '@fortawesome/free-solid-svg-icons/faSun'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import useLocalStorage from '@/app/hooks/useLocalStorage'
+import useLocalStorage from '@/app/(route)/_home/hooks/useLocalStorage'
 
 export default function ThemeSwitcher() {
   const THEME_NAME = 'stock-saga-theme'
@@ -21,8 +21,8 @@ export default function ThemeSwitcher() {
   return (
     <FontAwesomeIcon
       onClick={() => onChangeTheme(isDark)}
-      icon={isDark ? faMoon : faSun}
-      style={{ color: isDark ? 'white' : 'black' }}
+      icon={isDark ? faSun : faMoon}
+      size="lg"
     />
   )
 }
