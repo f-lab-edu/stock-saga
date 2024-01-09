@@ -6,8 +6,8 @@ import { useState } from 'react'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import ListItem from '@/app/(route)/_home/components/NavItem'
 import ROUTES from '@/app/(route)/_home/constants/routes'
+import ListItem from '@/app/components/ListItem'
 
 export default function NavigationBar() {
   const currentPath = usePathname()
