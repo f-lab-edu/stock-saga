@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import NavItem from '@/app/(route)/_home/components/NavItem'
+import ListItem from '@/app/(route)/_home/components/NavItem'
 import ROUTES from '@/app/(route)/_home/constants/routes'
 
 export default function NavigationBar() {
@@ -48,10 +48,9 @@ export default function NavigationBar() {
           <div className="absolute top-14 rounded bg-neutral-500  dark:bg-turquoise-700">
             <ul className="p-2">
               {ROUTES.map((navItem) => (
-                <NavItem
+                <li
                   key={navItem.path}
-                  hasBorder={false}
-                  className="rounded	 px-3 py-2 hover:bg-neutral-400 dark:hover:bg-turquoise-600"
+                  className="rounded  px-3 py-2 hover:bg-neutral-400 dark:hover:bg-turquoise-600"
                 >
                   <button
                     type="button"
@@ -59,7 +58,7 @@ export default function NavigationBar() {
                   >
                     {navItem.name}
                   </button>
-                </NavItem>
+                </li>
               ))}
             </ul>
           </div>
@@ -68,23 +67,24 @@ export default function NavigationBar() {
         <nav className="h-full">
           <ul className="flex h-full">
             {getSelectedNav(selectedNavPath)?.subNav?.map((subNavItem, idx) => (
-              <NavItem
-                key={`${idx.toLocaleString()}`}
-                hasBorder
-                isCurrentPath={includesPath(
-                  currentPath,
-                  `${selectedNavPath}${subNavItem.path}`,
-                )}
-                className="p-2"
-              >
-                <Link
-                  href={`${selectedNavPath}${subNavItem.path}`}
-                  className="align-middle"
-                  onClick={() => setOpen(false)}
+              <li>
+                <ListItem
+                  key={`${idx.toLocaleString()}`}
+                  isActive={includesPath(
+                    currentPath,
+                    `${selectedNavPath}${subNavItem.path}`,
+                  )}
+                  className="h-full p-2"
                 >
-                  {subNavItem.name}
-                </Link>
-              </NavItem>
+                  <Link
+                    href={`${selectedNavPath}${subNavItem.path}`}
+                    className="align-middle"
+                    onClick={() => setOpen(false)}
+                  >
+                    {subNavItem.name}
+                  </Link>
+                </ListItem>
+              </li>
             ))}
           </ul>
         </nav>

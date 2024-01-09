@@ -1,20 +1,19 @@
 interface NavItemProps {
-  hasBorder: boolean
   children: React.ReactNode
-  isCurrentPath?: boolean
+  isActive: boolean
   className?: string
 }
 
-export default function NavItem(props: NavItemProps) {
-  const { hasBorder, children, isCurrentPath, className } = props
+export default function ListItem(props: NavItemProps) {
+  const { children, isActive, className } = props
 
   return (
-    <li
-      className={`${hasBorder ? 'border-b-4' : 'border-none'} ${
-        isCurrentPath ? 'border-amber-600' : 'border-transparent'
+    <div
+      className={`border-b-4 ${
+        isActive ? 'border-amber-600' : 'border-transparent'
       } ${className}`}
     >
       {children}
-    </li>
+    </div>
   )
 }
