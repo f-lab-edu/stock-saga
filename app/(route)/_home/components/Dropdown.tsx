@@ -27,10 +27,9 @@ export default function DropdowndownWrapper({
   closeDropdown,
   children,
 }: DropdownWrapperProps) {
-  const value = useMemo(
-    () => ({ isOpen, openDropdown, closeDropdown }),
-    [isOpen, openDropdown, closeDropdown],
-  )
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
+  const value = { isOpen, openDropdown, closeDropdown }
+
   return (
     <DropdownContext.Provider value={value}>
       {children}
