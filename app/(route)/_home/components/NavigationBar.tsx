@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons/faCaretDown'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import DropdowndownWrapper from '@/app/(route)/_home/components/Dropdown'
 import ROUTES from '@/app/(route)/_home/constants/routes'
 import ListItem from '@/app/components/ListItem'
 
@@ -25,30 +26,29 @@ export default function NavigationBar() {
 
   const selectMainNav = (navPath: string) => {
     setSelectedNavPath(navPath)
-    setOpen(false)
   }
 
   return (
     <div className="h-12 w-full bg-neutral-500 px-5  dark:bg-turquoise-700 xl:flex xl:justify-center">
       <div className="relative flex h-full max-w-7xl xl:w-full">
-        <button
-          type="button"
-          className="mr-3 h-full border-b-4 border-transparent"
-          onClick={() => setOpen((prev) => !prev)}
+        <DropdowndownWrapper
+          isOpen={open}
+          openDropdown={() => setOpen(true)}
+          closeDropdown={() => setOpen(false)}
         >
-          {getSelectedNav(selectedNavPath)?.name}
-          <FontAwesomeIcon
-            icon={faCaretDown}
-            style={{
-              marginLeft: '10px',
-            }}
-          />
-        </button>
-        {open && (
+          <DropdowndownWrapper.Trigger className="mr-3 h-full border-b-4 border-transparent">
+            {getSelectedNav(selectedNavPath)?.name}
+            <FontAwesomeIcon
+              icon={faCaretDown}
+              style={{
+                marginLeft: '10px',
+              }}
+            />
+          </DropdowndownWrapper.Trigger>
           <div className="absolute top-14 rounded bg-neutral-500  dark:bg-turquoise-700">
-            <ul className="p-2">
+            <DropdowndownWrapper.List className="p-2">
               {ROUTES.map((navItem) => (
-                <li
+                <DropdowndownWrapper.Item
                   key={navItem.path}
                   className="rounded  px-3 py-2 hover:bg-neutral-400 dark:hover:bg-turquoise-600"
                 >
@@ -58,12 +58,11 @@ export default function NavigationBar() {
                   >
                     {navItem.name}
                   </button>
-                </li>
+                </DropdowndownWrapper.Item>
               ))}
-            </ul>
+            </DropdowndownWrapper.List>
           </div>
-        )}
-
+        </DropdowndownWrapper>
         <nav className="h-full">
           <ul className="flex h-full">
             {getSelectedNav(selectedNavPath)?.subNav?.map((subNavItem, idx) => (
